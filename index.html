@@ -1,10 +1,231 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CI/CD Demo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Textile Wholesale</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    color:#333;
+}
+
+header{
+    background:#0f172a;
+    color:white;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header h1{
+    color:#38bdf8;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    background:linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    height:80vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+}
+
+.hero h2{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+.btn{
+    background:#38bdf8;
+    color:white;
+    padding:14px 28px;
+    border-radius:6px;
+    text-decoration:none;
+}
+
+section{
+    padding:70px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:32px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.infrastructure{
+    background:white;
+}
+
+.infra-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.infra-item{
+    background:#e2e8f0;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+</style>
 </head>
+
 <body>
-    <h1>Hello World</h1>
-    <p>Textile Wholesale Cloud Project</p>
+
+<header>
+    <h1>Textile Wholesale</h1>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Wholesale Clothing Supplier</h2>
+
+    <p>
+        High Quality Apparel For Retail Businesses
+    </p>
+
+    <a class="btn" href="#">Explore Products</a>
+</section>
+
+<section>
+    <h2 class="section-title">Our Products</h2>
+
+    <div class="products">
+
+        <div class="card">
+            <h3>Men's Collection</h3>
+            <p>T-Shirts, Shirts, Jackets and Sportswear</p>
+        </div>
+
+        <div class="card">
+            <h3>Women's Collection</h3>
+            <p>Dresses, Blouses, Fashion Apparel</p>
+        </div>
+
+        <div class="card">
+            <h3>Kids Collection</h3>
+            <p>School Uniforms and Casual Clothing</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="infrastructure">
+    <h2 class="section-title">Cloud Infrastructure</h2>
+
+    <div class="infra-grid">
+
+        <div class="infra-item">
+            <h3>AWS EC2</h3>
+            <p>Application Hosting</p>
+        </div>
+
+        <div class="infra-item">
+            <h3>GitHub Actions</h3>
+            <p>CI/CD Automation</p>
+        </div>
+
+        <div class="infra-item">
+            <h3>Load Balancer</h3>
+            <p>Traffic Distribution</p>
+        </div>
+
+        <div class="infra-item">
+            <h3>Auto Scaling</h3>
+            <p>Automatic Resource Scaling</p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">About Company</h2>
+
+    <p style="text-align:center;max-width:900px;margin:auto;font-size:18px;">
+        Textile Wholesale is a leading wholesale clothing supplier.
+        Our company provides high-quality apparel products to retailers
+        while utilizing modern cloud infrastructure technologies for
+        scalability, security and high availability.
+    </p>
+</section>
+
+<footer>
+    <h3>Textile Wholesale</h3>
+    <br>
+
+    <p>Hosted on AWS Cloud Infrastructure</p>
+
+    <p>
+        Version 1.0
+    </p>
+
+    <br>
+
+    <p>
+        EC2 • GitHub Actions • Load Balancer • Auto Scaling
+    </p>
+</footer>
+
 </body>
 </html>
