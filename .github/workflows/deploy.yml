@@ -13,14 +13,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy to EC2 via SSH
+      - name: Copy index.html to EC2
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          source: "index.html"
+          target: "/tmp"
+
+      - name: Deploy on EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /usr/share/nginx/html
-            sudo cp index.html index.html.backup
-            echo "TextileWholesale - Automated Deploy Successful! Deployed via CI/CD Pipeline at $(date)" | sudo tee index.html
+            sudo cp /tmp/index.html /var/www/cicd-demo/index.html
             sudo systemctl restart nginx
